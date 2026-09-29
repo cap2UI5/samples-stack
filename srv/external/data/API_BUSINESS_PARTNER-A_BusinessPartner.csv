@@ -1,0 +1,15 @@
+BusinessPartner;BusinessPartnerCategory;BusinessPartnerFullName;SearchTerm1;CreationDate
+1000000;2;Inlandskunde DE 1;KUNDE_DE1;2019-02-11
+1000001;2;Domestic Customer US 1;CUST_US1;2019-02-11
+1000002;2;Domestic Customer US 2;CUST_US2;2019-02-12
+1000010;2;Bike Sales GmbH;BIKESALES;2020-06-03
+1000011;2;Blue Harbour Logistics Ltd.;BLUEHARBOUR;2021-09-14
+1000012;2;Cafe Central Wien;CAFECENTRAL;2022-05-30
+1000020;1;Anna Schmidt;SCHMIDT;2022-03-01
+1000021;1;John Miller;MILLER;2022-03-02
+1000022;1;Maria Garcia;GARCIA;2023-11-20
+1000023;1;Kenji Tanaka;TANAKA;2024-02-14
+1000030;3;Purchasing Group North;PG_NORTH;2024-01-08
+17100001;2;Domestic Supplier US 1;SUPPL_US1;2019-05-02
+17100002;2;Domestic Supplier US 2;SUPPL_US2;2019-05-02
+17300001;2;Inlandslieferant DE 1;LIEF_DE1;2019-05-06

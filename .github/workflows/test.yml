@@ -1,0 +1,28 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+      # No lockfile, as in cap2UI5 and cap2UI5/samples: the run tests what an
+      # install gets today. @sap/cds-rfc's optional connector
+      # (@sap-rfc/node-rfc-library) is not on npmjs.com and is skipped - the
+      # tests need none: samples.test.mjs runs against the mocks,
+      # remote.test.mjs against a stand-in for the connector.
+      - run: npm install --no-audit --no-fund
+      - run: npm run lint
+      - run: npm test

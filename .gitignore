@@ -1,0 +1,11 @@
+node_modules/
+package-lock.json
+*.sqlite
+*.sqlite-*
+*.log
+.DS_Store
+
+# credentials of the remote systems (README: "Connect ...") - never committed
+.env
+.cdsrc-private.json
+default-env.json

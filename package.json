@@ -1,0 +1,80 @@
+{
+  "name": "cap2ui5-samples-stack",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Learn how cap2UI5 plays with your stack: apps that call an OData service and a function module (BAPI) in an SAP system, through CAP's remote services - mocked in development, real once credentials are configured.",
+  "keywords": [
+    "cap",
+    "cds",
+    "sap",
+    "ui5",
+    "abap2ui5",
+    "cap2ui5",
+    "odata",
+    "rfc",
+    "bapi",
+    "samples"
+  ],
+  "homepage": "https://github.com/cap2UI5/samples-stack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cap2UI5/samples-stack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cap2UI5/samples-stack/issues"
+  },
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.15"
+  },
+  "dependencies": {
+    "@cap-js/sqlite": "^3",
+    "@cap2ui5/cds-plugin": "^0.3.1",
+    "@sap/cds": "^10",
+    "@sap/cds-rfc": "^2.2.1"
+  },
+  "devDependencies": {
+    "@abap2ui5/linter": "^0.8.3",
+    "@cap-js/cds-test": "^1.0.2",
+    "eslint": "^10",
+    "fast-xml-parser": "^5.11.1"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "cds watch",
+    "mocked": "cds-serve --with-mocks",
+    "test": "node --test test/*.test.mjs",
+    "lint": "eslint ."
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": ":memory:"
+        }
+      },
+      "API_BUSINESS_PARTNER": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_BUSINESS_PARTNER",
+        "[production]": {
+          "credentials": {
+            "destination": "S4HANA",
+            "path": "/sap/opu/odata/sap/API_BUSINESS_PARTNER"
+          }
+        }
+      },
+      "SAP_RFC": {
+        "kind": "rfc",
+        "model": "srv/external/SAP_RFC",
+        "external": true,
+        "[production]": {
+          "credentials": {
+            "destination": "SAP_RFC"
+          }
+        }
+      }
+    }
+  }
+}
