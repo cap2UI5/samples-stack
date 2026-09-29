@@ -1,0 +1,15 @@
+BusinessPartner;AddressID;StreetName;HouseNumber;PostalCode;CityName;Country
+1000000;22786;Musterstrasse;16;69190;Walldorf;DE
+1000001;22787;Main Street;1200;19073;Springfield;US
+1000002;22788;Harbor Boulevard;45;92801;Anaheim;US
+1000010;22801;Radweg;7;10115;Berlin;DE
+1000010;22802;Lagerstrasse;21;04109;Leipzig;DE
+1000011;22803;Quay Road;3;SW1A 1AA;London;GB
+1000012;22804;Kaffeegasse;14;1010;Wien;AT
+1000020;22810;Hauptstrasse;5;80331;Muenchen;DE
+1000021;22811;Oak Avenue;88;60601;Chicago;US
+1000022;22812;Calle Mayor;12;28013;Madrid;ES
+1000023;22813;Sakura-dori;2;104-0061;Tokyo;JP
+17100001;22820;Industrial Park;500;30303;Atlanta;US
+17100002;22821;Commerce Drive;77;75201;Dallas;US
+17300001;22822;Werkstrasse;9;70173;Stuttgart;DE
