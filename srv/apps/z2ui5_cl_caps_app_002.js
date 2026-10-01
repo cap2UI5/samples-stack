@@ -356,7 +356,8 @@ function dats(value) {
 // host and client, and never user or password.
 function source_of(srv) {
   if (srv.mocked) return `the mock of ${srv.name} - cds watch serves it while no credentials are configured`;
-  const { destination, ashost, mshost, client } = srv.options.credentials ?? {};
+  const { destination, ashost, mshost, wshost, client } = srv.options.credentials ?? {};
   if (destination) return `destination ${destination}`;
-  return `${ashost ?? mshost}, client ${client}`;
+  const host = ashost ?? mshost ?? wshost;
+  return host ? `${host}, client ${client}` : srv.name;   // incomplete credentials: the call's error says so
 }

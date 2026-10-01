@@ -26,11 +26,14 @@ The top of each sample's screen says which of the two answered.
 
 ```bash
 npm install
-cds watch            # needs @sap/cds-dk (npm i -g @sap/cds-dk) - or: npm run mocked
+npm start            # cds-serve --with-mocks - or cds watch, with @sap/cds-dk installed
 ```
 
-`cds watch` prints the address of every sample. Log in as `alice` with an
-empty password (CAP's mocked development user), then open
+`--with-mocks` is what `cds watch` passes: every remote system without
+credentials is mocked. In the production profile CAP ignores the flag, so the
+same script serves a deployment. The log prints the address of every sample.
+Log in as `alice` with an empty password (CAP's mocked development user), then
+open
 <http://localhost:4004/sap/bc/z2ui5?app_start=Z2UI5_CL_CAPS_APP_001> or
 <http://localhost:4004/sap/bc/z2ui5?app_start=Z2UI5_CL_CAPS_APP_002>.
 

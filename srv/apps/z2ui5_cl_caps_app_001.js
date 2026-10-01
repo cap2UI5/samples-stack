@@ -280,6 +280,7 @@ function source_of(srv) {
   if (srv.mocked) return `the mock of ${srv.name} - cds watch serves it while no credentials are configured`;
   const { url, destination } = srv.options.credentials ?? {};
   if (destination) return `destination ${destination}`;
-  const u = new URL(url);
+  let u;
+  try { u = new URL(url); } catch { return srv.name; }   // no url, or not one: the query's error says so
   return u.origin + u.pathname;
 }

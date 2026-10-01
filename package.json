@@ -41,9 +41,8 @@
     "fast-xml-parser": "^5.11.1"
   },
   "scripts": {
-    "start": "cds-serve",
+    "start": "cds-serve --with-mocks",
     "watch": "cds watch",
-    "mocked": "cds-serve --with-mocks",
     "test": "node --test test/*.test.mjs",
     "lint": "eslint ."
   },
