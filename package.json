@@ -30,12 +30,12 @@
   },
   "dependencies": {
     "@cap-js/sqlite": "^3",
-    "@cap2ui5/cds-plugin": "^0.3.1",
+    "@cap2ui5/cds-plugin": "^0.4.0",
     "@sap/cds": "^10",
     "@sap/cds-rfc": "^2.2.1"
   },
   "devDependencies": {
-    "@abap2ui5/linter": "^0.8.3",
+    "@abap2ui5/linter": "^0.8.5",
     "@cap-js/cds-test": "^1.0.2",
     "eslint": "^10",
     "fast-xml-parser": "^5.11.1"

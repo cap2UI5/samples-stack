@@ -1,0 +1,26 @@
+# Monthly, grouped. The dependency that matters is @cap2ui5/cds-plugin: while
+# the plugin is 0.x a minor may change how apps are written and break the
+# samples here, and this repository has no lockfile - an install gets the
+# newest plugin the range allows. A bump has to show up here as a pull request
+# that runs the tests, so a plugin release that breaks a sample is a red pull
+# request, not a broken `npm install` for somebody trying the samples.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    groups:
+      cap2ui5:
+        patterns: ["@cap2ui5/*"]
+      dependencies:
+        patterns: ["*"]
+        exclude-patterns: ["@cap2ui5/*"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
