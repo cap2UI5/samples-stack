@@ -35,7 +35,7 @@
     "@sap/cds-rfc": "^2.2.1"
   },
   "devDependencies": {
-    "@abap2ui5/linter": "^0.8.5",
+    "@abap2ui5/linter": "^0.9.0",
     "@cap-js/cds-test": "^1.0.2",
     "eslint": "^10",
     "fast-xml-parser": "^5.11.1"
