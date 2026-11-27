@@ -50,15 +50,16 @@ export async function post(url, { app, id = "", event = "", args = [], model = {
   return { status: r.status, text, json, id: json?.S_FRONT?.ID, app: json?.S_FRONT?.APP };
 }
 
-/** Every action of a response, system and custom. */
-export const actions = (r) => [
-  ...(r.json?.S_FRONT?.S_ACTION?.T_SYSTEM ?? []),
-  ...(r.json?.S_FRONT?.S_ACTION?.T_CUSTOM ?? []),
-];
+// What a response says, as protocol 3 carries it (abap2UI5/protocol): the
+// screen in S_FRONT.VIEWS - one entry per slot the roundtrip changes,
+// { XML, OPT } to display it or { DESTROY: true } to take it down - and what
+// to do on it in S_FRONT.ACTIONS.
+
+/** The front-end actions of a response, in order. */
+export const actions = (r) => r.json?.S_FRONT?.ACTIONS ?? [];
 
 /** The XML a response displays into a view slot (MAIN, POPUP, NEST, …), or undefined. */
-export const slot = (r, name) => actions(r)
-  .find((a) => a[0] === "VIEW_SLOTS" && a[1] === "display" && a[2] === name)?.[3];
+export const slot = (r, name) => r.json?.S_FRONT?.VIEWS?.[name]?.XML;
 
 /** The message box a response opens, as { type, text }, or undefined. */
 export const messageBox = (r) => {
